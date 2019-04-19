@@ -23,7 +23,7 @@
   8. Dado un n´umero i, entrega la i-´esima habitaci´on m´as cara. En caso de empate muestre
   las dos 
   Comandos:
-  \copy restaurantes (id_restaurante, nombre, direccion, telefono, descripcion, id_region) from 'datos/impar/restaurante' DELIMITER ';' CSV;
+  \copy restaurantes (id_restaurante, nombre, direccion, telefono, descripcion, id_region) from 'datos/impar/restaurante' DELIMITER ';' CSV HEADER;
   -->
 
   <!-- 1. Dada una regi´on, muestre todos los platos de los restaurantes ubicados en dicha regi´on. -->

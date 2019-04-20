@@ -4,5 +4,11 @@
 
 
 create table usuarios(id_usuario int primary key, nombre varchar, fecha_nacimiento date, email varchar, nacionalidad varchar)
-
 \copy usuarios (id_usuario, nombre, fecha_nacimiento, email, nacionalidad) from 'datos/comun/usuario' DELIMITER ',' CSV;
+
+create table reservas (id_reserva int primary key, fecha_inicio varchar, fecha_fin varchar); 
+\copy reservas (id_reserva, fecha_inicio, fecha_fin) from 'datos/impar/reservas.csv' DELIMITER ';' CSV HEADER;
+
+(se utilizan los archivos py para arreglar el archivo de hoteles-habitaciones que tenía nombres con comas en medio y tenía conflicto con los readers de csv)
+create table hoteles (id_hotel int primary key, nombre varchar, direccion varchar, telefono int, descripcion varchar, estrellas smallint);
+\copy hoteles (id_hotel, nombre, direccion, telefono, descripcion, estrellas) from 'datos/impar/hoteles.csv' DELIMITER ';' CSV HEADER;

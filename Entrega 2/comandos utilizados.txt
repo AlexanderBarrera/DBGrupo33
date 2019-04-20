@@ -38,3 +38,12 @@ create table restaurantes_regiones(id_restaurante int primary key, id_region int
 				   FOREIGN KEY(id_restaurante) REFERENCES restaurantes (id_restaurant) ON DELETE CASCADE,
 			   	   FOREIGN KEY(id_region) REFERENCES regiones (id_region) ON DELETE CASCADE);
 \copy restaurantes_regiones(id_restaurante, id_region) from 'datos/impar/restaurantes_regiones.csv' DELIMITER ';' CSV HEADER;
+
+create table restaurantes_platos(id_plato int, id_restaurante int, 
+				 PRIMARY KEY (id_plato, id_restaurante),
+				 FOREIGN KEY (id_plato) REFERENCES platos (id_plato) ON DELETE CASCADE,
+				 FOREIGN KEY (id_restaurante) REFERENCES restaurantes (id_restaurante) ON DELETE CASCADE);
+\copy restaurantes_platos(id_plato, id_restaurante) from 'datos/impar/restaurantes_platos.csv' DELIMITER ';' CSV HEADER;
+
+
+				

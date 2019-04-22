@@ -6,7 +6,7 @@ create table usuarios(id_usuario int primary key, nombre varchar, fecha_nacimien
 create table reservas (id_reserva int primary key, fecha_inicio varchar, fecha_fin varchar); 
 \copy reservas (id_reserva, fecha_inicio, fecha_fin) from 'datos/impar/reservas.csv' DELIMITER ';' CSV HEADER;
 
-(se utilizan los archivos py para arreglar el archivo de hoteles_habitaciones que tenía nombres con comas en medio y tenía conflicto con los readers de csv)
+(se utilizan los archivos py para arreglar el archivo de hoteles_habitaciones que tenï¿½a nombres con comas en medio y tenï¿½a conflicto con los readers de csv)
 
 create table hoteles (id_hotel int primary key, nombre varchar, direccion varchar, telefono int, descripcion varchar, estrellas smallint);
 \copy hoteles (id_hotel, nombre, direccion, telefono, descripcion, estrellas) from 'datos/impar/hoteles.csv' DELIMITER ';' CSV HEADER;
@@ -44,6 +44,11 @@ create table restaurantes_platos(id_plato int, id_restaurante int,
 				 FOREIGN KEY (id_plato) REFERENCES platos (id_plato) ON DELETE CASCADE,
 				 FOREIGN KEY (id_restaurante) REFERENCES restaurantes (id_restaurante) ON DELETE CASCADE);
 \copy restaurantes_platos(id_plato, id_restaurante) from 'datos/impar/restaurantes_platos.csv' DELIMITER ';' CSV HEADER;
+
+CREATE TABLE agencias(id_agencia int, nombre varchar, direccion varchar, telefono varchar, 
+	PRIMARY KEY(id_agencia));
+\copy agencias(id_agencia, nombre, direccion, telefono) from 'datos/impar/agencias.csv' DELIMITER ';' CSV HEADER;
+
 
 
 				

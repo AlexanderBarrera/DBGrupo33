@@ -9,8 +9,6 @@
 
   <h3>Consulta por tipo y nombre:</h3>
   <!-- Consultas:
-  1. Dada una regi´on, muestre todos los platos de los restaurantes ubicados en dicha regi´on.
-  2. Dado un n´umero de estrellas, muestre todas las habitaciones de hoteles con m´as de esa
   cantidad de estrellas, junto al nombre del hotel en el que est´a.
   13. Muestre todas las reservas a habitaciones realizadas por el usuario con id i entre las
   fechas a y b.
@@ -37,7 +35,7 @@
   <br>
   <br>
 
-  <!-- <h3>Consulta Pokemones mas altos que:</h3>
+  <!--   2. Dado un n´umero de estrellas, muestre todas las habitaciones de hoteles con m´as de esa -->
 
   <form action="consultas/consulta_altura.php" method="post">
     Altura Mínima:

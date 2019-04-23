@@ -9,9 +9,6 @@
 
   <h3>Consulta por tipo y nombre:</h3>
   <!-- Consultas:
-  cantidad de estrellas, junto al nombre del hotel en el que est´a.
-  13. Muestre todas las reservas a habitaciones realizadas por el usuario con id i entre las
-  fechas a y b.
   4. Entregue todos los tour de las agencias que est´an presente s´olo en una regi´on.
   5. Para cada regi´on, entregue la habitaci´on que ha sido reservada m´as veces.
   6. Entregue todos los usuarios que han reservado la habitaci´on m´as barata en la regi´on
@@ -37,9 +34,27 @@
 
   <!--   2. Dado un n´umero de estrellas, muestre todas las habitaciones de hoteles con m´as de esa -->
 
-  <form action="consultas/consulta_altura.php" method="post">
-    Altura Mínima:
-    <input type="text" name="altura">
+  <form action="consultas/consulta_estrellas_habitaciones.php" method="post">
+    Número de estrellas mínimas (1 a 5)
+    <input type="number" name="estrellas" min="1" max="5">
+    <br/><br/>
+    <input type="submit" value="Buscar">
+  </form>
+  <br>
+  <br>
+  <br>
+   <!--   3. Muestre todas las reservas a habitaciones realizadas por el usuario con id i entre las
+  fechas a y b. -->
+
+   <form action="consultas/consulta_reservas_usuario_fechas.php" method="post">
+    ID del usuario
+    <input type="number" name="user_id">
+    <br/><br/>
+    Fecha inicio
+    <input type="date" name="fecha_inicio">
+    <br/><br/>
+    Fecha término
+    <input type="date" name="fecha_termino">
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>
@@ -47,21 +62,16 @@
   <br>
   <br>
 
-  <h3>Consulta de selección por tipo:</h3>
+  <!--   4. Entregue todos los tour de las agencias que est´an presente s´olo en una regi´on.-->
+  <form action="consultas/tours_unica_region.php" method="post">
+  Tours de las agencias que están presentes sólo en una región
+  <input type="submit" value="Buscar">
+  </form>
+  <br>
+  <br>
+  <br>
 
-  <form action="consultas/consulta_tipo.php" method="post">
-    Ingresar un tipo:
-    <select name="tipo">
-      <?php
-      #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
-      foreach ($dataCollected as $d) {
-        echo "<option value=$d[0]>$d[0]</option>";
-      }
-      ?>
-    </select>
-    <br><br>
-    <input type="submit" value="Buscar por tipo">
-  </form> -->
+
   <br><br><br><br>
 </body>
 </html>

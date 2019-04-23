@@ -3,7 +3,7 @@ ejecutando psql desde Sites/Entrega 2, se utilizan los siguentes comandos:
 create table usuarios(id_usuario int primary key, nombre varchar, fecha_nacimiento date, email varchar, nacionalidad varchar)
 \copy usuarios (id_usuario, nombre, fecha_nacimiento, email, nacionalidad) from 'datos/comun/usuario' DELIMITER ',' CSV;
 
-create table reservas (id_reserva int primary key, fecha_inicio varchar, fecha_fin varchar); 
+create table reservas (id_reserva int primary key, fecha_inicio date, fecha_fin date); 
 \copy reservas (id_reserva, fecha_inicio, fecha_fin) from 'datos/impar/reservas.csv' DELIMITER ';' CSV HEADER;
 
 (se utilizan los archivos py para arreglar el archivo de hoteles_habitaciones que ten�a nombres con comas en medio y ten�a conflicto con los readers de csv)
@@ -29,10 +29,8 @@ create table reservas_habit(id_reseva int primary key, id_habitacion int,
 			    FOREIGN KEY(id_habitacion) REFERENCES habitaciones (id_habitacion) ON DELETE CASCADE);
 \copy reservas_habit(id_reserva, id_habitacion) from 'datos/impar/reservas_habit.csv' DELIMITER ';' CSV HEADER;
 
-create table reservas_usuarios(id_reseva int primary key, id_usuario int,
-			    FOREIGN KEY(id_reserva) REFERENCES reservas (id_reserva) ON DELETE CASCADE,
-			    FOREIGN KEY(id_usuario) REFERENCES usuarios (id_usuario) ON DELETE CASCADE);
-\copy reservas_usuarios(id_reserva, id_usuarios) from 'datos/impar/reservas_usuarios.csv' DELIMITER ';' CSV HEADER;
+create table reservas_usuarios(id_reserva int primary key, id_usuario int, FOREIGN KEY(id_reserva) REFERENCES reservas (id_reserva) ON DELETE CASCADE,FOREIGN KEY(id_usuario) REFERENCES usuarios (id_usuario) ON DELETE CASCADE);
+\copy reservas_usuarios(id_reserva, id_usuario) from 'datos/impar/reservas_usuarios.csv' DELIMITER ';' CSV HEADER;
 
 create table restaurantes_regiones(id_restaurante int primary key, id_region int,
 				   FOREIGN KEY(id_restaurante) REFERENCES restaurantes (id_restaurant) ON DELETE CASCADE,

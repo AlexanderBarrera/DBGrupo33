@@ -8,8 +8,8 @@
   $var = $_POST["estrellas"];
   $var = (int)$var;
   echo "<h1> Habitaciones de hoteles con un mínimo de $var estrellas </h1>";
-  // Para no tener problemas con los '
-  $query = "SELECT HA.nombre, HO.nombre FROM hoteles HO, habitaciones HA, hotel_habit HO_HA WHERE HO.estrellas>=$var AND HO.id_hotel = HO_HA.id_hotel and HA.id_habitacion = HO_HA.id_habitacion;";
+
+  $query = "SELECT HA.id_habitacion, HO.nombre FROM hoteles HO, habitaciones HA, hotel_habit HO_HA WHERE HO.estrellas>=$var AND HO.id_hotel = HO_HA.id_hotel and HA.id_habitacion = HO_HA.id_habitacion;";
   $result = $db -> prepare($query);
   $result -> execute();
   $dataCollected = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo

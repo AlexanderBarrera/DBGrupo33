@@ -1,7 +1,7 @@
 ejecutando psql desde Sites/Entrega 2, se utilizan los siguentes comandos:
 
 create table usuarios(id_usuario int primary key, nombre varchar, fecha_nacimiento date, email varchar, nacionalidad varchar)
-\copy usuarios (id_usuario, nombre, fecha_nacimiento, email, nacionalidad) from 'datos/comun/usuario' DELIMITER ',' CSV;
+\copy usuarios (id_usuario, nombre, fecha_nacimiento, email, nacionalidad) from 'datos/comun/usuario.csv' DELIMITER ';' CSV HEADER;
 
 create table reservas (id_reserva int primary key, fecha_inicio date, fecha_fin date); 
 \copy reservas (id_reserva, fecha_inicio, fecha_fin) from 'datos/impar/reservas.csv' DELIMITER ';' CSV HEADER;

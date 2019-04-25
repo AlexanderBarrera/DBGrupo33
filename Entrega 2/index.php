@@ -2,21 +2,13 @@
 
 <body>
 
-  <h1>Agencia de turismo XXXXX</h1>
+  <h1>Agencia de turismo ROnCHA</h1>
   <p>Aqui podrás planificar tu próximo viaje</p>
 
   <br>
 
-  <h3>Consulta por tipo y nombre:</h3>
-  <!-- Consultas:
-  
- 
- 
-  8. Dado un n´umero i, entrega la i-´esima habitaci´on m´as cara. En caso de empate muestre
-  las dos 
-  Comandos:
-  \copy restaurantes (id_restaurante, nombre, direccion, telefono, descripcion, id_region) from 'datos/impar/restaurante' DELIMITER ';' CSV HEADER;
-  -->
+  <h3>Consultas</h3>
+
 
   <!-- 1. Dada una regi´on, muestre todos los platos de los restaurantes ubicados en dicha regi´on. -->
   <form action="consultas/consulta_platos_region.php" method="post">
@@ -93,8 +85,8 @@
   total que paga por esa reserva. -->
 
     <form action="consultas/consulta_usuario_reserva_monto.php" method="post">
-    ID de la reserva
-    <input type="number" name="id">
+    Búsqueda por ID de la reserva
+    <input type="number" name="id" min="0">
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>
@@ -102,7 +94,17 @@
   <br>
   <br>
 
+   <!--
+  8. Dado un n´umero i, entrega la i-´esima habitaci´on m´as cara. En caso de empate muestre
+  las dos 
+  -->
 
+  <form action="consultas/consulta_iesima.php" method="post">
+    i-ésiama habitación mas cara
+    <input type="number" name="id" min="0">
+    <br/><br/>
+    <input type="submit" value="Buscar" >
+  </form>
 
   <br><br><br><br>
 </body>

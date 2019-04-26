@@ -1,19 +1,24 @@
 <?php include('../templates/header.html');   ?>
 
 <body>
-    <!--   3. Muestre todas las reservas a habitaciones realizadas por el usuario con id i entre las
-  fechas a y b. -->
+  <!--
+  8. Dado un n´umero i, entrega la i-´esima habitaci´on m´as cara. En caso de empate muestre
+  las dos 
+  -->
   <?php
   require("../config/conexion.php"); #Llama a conexión, crea el objeto PDO y obtiene la variable $db
 
-  $id = $_POST["user_id"];
-  $id = (int)$id;
-  $f_i = $_POST["fecha_inicio"];
-  $f_t = $_POST["fecha_termino"];
+  $var = $_POST["i"];
+  $var = (int)$var;
 
-  echo "<h1> Reservas del usuario $id el $f_i y $f_t </h1>";
+  echo "<h1> $var habitación más cara </h1>";
 
-  $query = "SELECT RE.id_reserva FROM reservas RE, reservas_usuarios RE_U WHERE RE_U.id_usuario = $id AND RE.id_reserva = RE_U.id_reserva AND RE.fecha_inicio >= '$f_i' AND RE.fecha_fin <= '$f_t';";
+  
+  $query = "SELECT HAB.id_habitacion, Hab.precio FROM habitaciones HAB WHERE $var=(
+    Select count(*) from habitaciones HAB2 where HAB2.precio >= HAB.precio
+  );";
+
+
   $result = $db -> prepare($query);
   $result -> execute();
   $dataCollected = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
@@ -24,15 +29,16 @@
   .myTable td, .myTable th { padding:5px;border:1px solid #000; }
   </style>
 
-  <table class="myTable">
+  <table clas="myTable">
   <th>
     <tr>
-      <th>ID reserva</th>
+      <th>Habitación</th>
+      <th>Precio</th>
     </tr>
 </th>
   <?php
   foreach ($dataCollected as $p) {
-    echo "<tr> <td>$p[0]</td> </tr>";
+    echo "<tr> <td>$p[0]</td> <td>$p[1]</td></tr>";
   }
   ?>
   </table>

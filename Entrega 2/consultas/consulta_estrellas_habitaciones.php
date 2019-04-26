@@ -1,6 +1,7 @@
 <?php include('../templates/header.html');   ?>
 
 <body>
+  <div class="container">
   <!--   2. Dado un n´umero de estrellas, muestre todas las habitaciones de hoteles con m´as de esa cantidad de estrellas, junto al nombre del hotel en el que est´a-->
   <?php
   require("../config/conexion.php"); #Llama a conexión, crea el objeto PDO y obtiene la variable $db
@@ -14,8 +15,13 @@
   $result -> execute();
   $dataCollected = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
   ?>
+  <style type="text/css">
+  .myTable { width:400px;background-color:#eee;border-collapse:collapse; }
+  .myTable th { background-color:#000;color:white;width:50%; }
+  .myTable td, .myTable th { padding:5px;border:1px solid #000; }
+  </style>
 
-  <table>
+  <table class="myTable">
     <tr>
       <th>Habitación</th>
       <th>Hotel</th>
@@ -26,5 +32,4 @@
   }
   ?>
   </table>
-
 <?php include('../templates/footer.html'); ?>

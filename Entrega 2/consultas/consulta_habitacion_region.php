@@ -12,8 +12,13 @@
   $result -> execute();
   $dataCollected = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
   ?>
+    <style type="text/css">
+  .myTable { width:400px;background-color:#eee;border-collapse:collapse; }
+  .myTable th { background-color:#000;color:white;width:50%; }
+  .myTable td, .myTable th { padding:5px;border:1px solid #000; }
+  </style>
 
-  <table>
+  <table class="muTable">
     <tr>
       <th>Región</th>
       <th>Habitación más popular</th>

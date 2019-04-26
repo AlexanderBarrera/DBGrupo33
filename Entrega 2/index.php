@@ -4,9 +4,9 @@
 
     <br>
 
-    <h3>Consultas</h3>
+    <h3>Consulta 1</h3>
 
-
+    
     <!-- 1. Dada una regi´on, muestre todos los platos de los restaurantes ubicados en dicha regi´on. -->
     <form action="consultas/consulta_platos_region.php" method="post">
       Región
@@ -20,6 +20,7 @@
     <br>
     <br>
 
+    <h3>Consulta 2</h3>
     <!--   2. Dado un n´umero de estrellas, muestre todas las habitaciones de hoteles con m´as de esa -->
 
     <form action="consultas/consulta_estrellas_habitaciones.php" method="post">
@@ -31,6 +32,7 @@
     <br>
     <br>
     <br>
+    <h3>Consulta 3</h3>
     <!--   3. Muestre todas las reservas a habitaciones realizadas por el usuario con id i entre las
     fechas a y b. -->
 
@@ -49,7 +51,7 @@
     <br>
     <br>
     <br>
-
+    <h3>Consulta 4</h3>
     <!--   4. Entregue todos los tour de las agencias que est´an presente s´olo en una regi´on.-->
     <form action="consultas/tours_unica_region.php" method="post">
     Tours de las agencias que están presentes sólo en una región
@@ -58,7 +60,7 @@
     <br>
     <br>
     <br>
-
+    <h3>Consulta 5</h3>
     <!--   5. Para cada regi´on, entregue la habitaci´on que ha sido reservada m´as veces.-->
     <form action="consultas/consulta_habitacion_region.php" method="post">
     Habitaciones más populares por región
@@ -67,7 +69,7 @@
     <br>
     <br>
     <br>
-
+    <h3>Consulta 6</h3>
     <!--    6. Entregue todos los usuarios que han reservado la habitaci´on m´as barata en la regi´on
     II.-->
     <form action="consultas/consulta_reservas_region_barata.php" method="post">
@@ -77,7 +79,7 @@
     <br>
     <br>
     <br>
-
+    <h3>Consulta 7</h3>
       <!--    7. Dado un id de reserva, muestre el nombre del usuario que hizo la reserva junto al monto
     total que paga por esa reserva. -->
 
@@ -97,7 +99,7 @@
     -->
 
     
-
+    <h3>Consulta 8</h3>
     <form action="consultas/consulta_iesima.php" method="post">
       i-ésiama habitación mas cara
       <input type="number" name="i" min="0">

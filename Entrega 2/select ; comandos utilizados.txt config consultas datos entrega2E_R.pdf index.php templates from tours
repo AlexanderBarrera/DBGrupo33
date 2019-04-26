@@ -1,0 +1,23 @@
+                List of relations
+ Schema |         Name          | Type  |  Owner  
+--------+-----------------------+-------+---------
+ public | agencia_region        | table | grupo33
+ public | agencias              | table | grupo33
+ public | habitaciones          | table | grupo33
+ public | hotel_habit           | table | grupo33
+ public | hotel_region          | table | grupo33
+ public | hoteles               | table | grupo33
+ public | p_hab                 | view  | grupo33
+ public | platos                | table | grupo33
+ public | regiones              | table | grupo33
+ public | reservas              | table | grupo33
+ public | reservas_habit        | table | grupo33
+ public | reservas_usuarios     | table | grupo33
+ public | restaurantes          | table | grupo33
+ public | restaurantes_platos   | table | grupo33
+ public | restaurantes_regiones | table | grupo33
+ public | tour_agencia          | table | grupo33
+ public | tours                 | table | grupo33
+ public | usuarios              | table | grupo33
+(18 rows)
+
